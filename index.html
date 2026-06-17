@@ -10,8 +10,6 @@ body{background:#0f1923;color:#e0e6ed;font-family:'Microsoft YaHei','PingFang SC
 .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:8px}
 .header h1{font-size:24px;font-weight:600;color:#fff}
 .header .date{color:#8899aa;font-size:14px}
-
-/* 核心指标卡片：大屏4列，平板2列，手机1列 */
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
 .card{background:#1a2836;border-radius:12px;padding:20px;border:1px solid #253548}
 .card .label{font-size:13px;color:#8899aa;margin-bottom:8px}
@@ -21,8 +19,6 @@ body{background:#0f1923;color:#e0e6ed;font-family:'Microsoft YaHei','PingFang SC
 .card.blue .value{color:#60a5fa}
 .card.red .value{color:#f87171}
 .card.green .value{color:#34d399}
-
-/* 双列区域：大屏2列，手机1列 */
 .grid-2{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:24px}
 .panel{background:#1a2836;border-radius:12px;padding:20px;border:1px solid #253548}
 .panel h2{font-size:16px;font-weight:600;color:#fff;margin-bottom:16px}
@@ -46,36 +42,13 @@ body{background:#0f1923;color:#e0e6ed;font-family:'Microsoft YaHei','PingFang SC
 .alert{background:#451a1a;border:1px solid #f87171;border-radius:8px;padding:12px 16px;color:#fca5a5;font-size:13px;margin-top:8px}
 .alert.ok{background:#1a3a2a;border-color:#34d399;color:#6ee7b7}
 .summary-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:2px solid #334155;margin-top:8px;font-weight:600}
-
-/* ===== 平板（≤1024px）===== */
-@media (max-width:1024px){
-  .cards{grid-template-columns:repeat(2,1fr)}
-  .grid-2{grid-template-columns:1fr}
-}
-
-/* ===== 手机（≤640px）===== */
+@media (max-width:1024px){ .cards{grid-template-columns:repeat(2,1fr)} .grid-2{grid-template-columns:1fr} }
 @media (max-width:640px){
-  body{padding:12px}
-  .header h1{font-size:18px}
-  .header .date{font-size:12px}
-  .cards{grid-template-columns:1fr;gap:10px}
-  .card{padding:14px 16px}
-  .card .value{font-size:26px}
-  .card .label{font-size:12px}
-  .card .sub{font-size:11px}
-  .grid-2{grid-template-columns:1fr;gap:10px}
-  .panel{padding:14px 16px}
-  .panel h2{font-size:14px}
-  .cat-name{width:130px;font-size:12px}
-  .cat-bar-wrap{min-width:40px}
-  .cat-nums{font-size:11px;min-width:80px}
-  .cat-gap{font-size:10px;margin-left:4px}
-  .ratio-circle{width:90px;height:90px;border-width:4px}
-  .ratio-circle .num{font-size:22px}
-  .ratio-circle .lbl{font-size:10px}
-  .ratio-section{gap:12px}
-  .alert{font-size:11px;padding:10px 12px}
-  .summary-row{font-size:13px}
+  body{padding:12px} .header h1{font-size:18px} .cards{grid-template-columns:1fr;gap:10px}
+  .card{padding:14px 16px} .card .value{font-size:26px} .grid-2{grid-template-columns:1fr;gap:10px}
+  .panel{padding:14px 16px} .cat-name{width:130px;font-size:12px} .cat-nums{font-size:11px;min-width:80px}
+  .ratio-circle{width:90px;height:90px;border-width:4px} .ratio-circle .num{font-size:22px}
+  .ratio-section{gap:12px} .alert{font-size:11px}
 }
 </style>
 </head>
@@ -86,7 +59,6 @@ body{background:#0f1923;color:#e0e6ed;font-family:'Microsoft YaHei','PingFang SC
   <div class="date">更新于 2026年6月17日 · 数据已核验</div>
 </div>
 
-<!-- 核心指标卡片 -->
 <div class="cards">
   <div class="card purple">
     <div class="label">📋 最终报名人数</div>
@@ -96,7 +68,7 @@ body{background:#0f1923;color:#e0e6ed;font-family:'Microsoft YaHei','PingFang SC
   <div class="card blue">
     <div class="label">📅 报名状态</div>
     <div class="value" style="font-size:22px">已截止</div>
-    <div class="sub">6/15 截止，最终 210 人</div>
+    <div class="sub">6/15 截止 · 最终 210 人</div>
   </div>
   <div class="card green">
     <div class="label">🎯 完成率</div>
@@ -110,7 +82,6 @@ body{background:#0f1923;color:#e0e6ed;font-family:'Microsoft YaHei','PingFang SC
   </div>
 </div>
 
-<!-- 组别进度 + 关键信息 -->
 <div class="grid-2">
   <div class="panel">
     <h2>📊 各组别报名进度</h2>
@@ -159,12 +130,12 @@ body{background:#0f1923;color:#e0e6ed;font-family:'Microsoft YaHei','PingFang SC
     <h2>👥 新生 · 老生比例</h2>
     <div class="ratio-section">
       <div class="ratio-circle new">
-        <div class="num" style="color:#34d399">待核实</div>
-        <div class="lbl">新生</div>
+        <div class="num" style="color:#34d399">155</div>
+        <div class="lbl">新生 · 74%</div>
       </div>
       <div class="ratio-circle old">
-        <div class="num" style="color:#60a5fa">待核实</div>
-        <div class="lbl">老生</div>
+        <div class="num" style="color:#60a5fa">55</div>
+        <div class="lbl">老生 · 26%</div>
       </div>
     </div>
     <div class="alert ok">
@@ -173,7 +144,7 @@ body{background:#0f1923;color:#e0e6ed;font-family:'Microsoft YaHei','PingFang SC
     </div>
     <div class="alert" style="margin-top:12px">
       ⚠️ <strong>4组未达目标</strong>：硬笔初中组(缺8)、硬笔幼儿组(缺6)、软笔小学低年级(缺2)、硬笔小学高年级(缺1)<br>
-      📅 决赛6/19顺联广场 · 倒计时2天 · 新生/老生比例待飞书统计后更新
+      📅 决赛6/19顺联广场 · 倒计时2天 · 新生占比74%，公域拉新效果显著！
     </div>
   </div>
 </div>
